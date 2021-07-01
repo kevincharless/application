@@ -35,15 +35,19 @@ const EventCard: React.FC<EventCardProps> = ({
 				position="Top"
 				hasRightIcon={true}
 				icon={<RiCalendarEventLine />}
-				rightIcon={<VscEdit />}
+				rightIcon={
+					<VscEdit className="text-primary" style={{ cursor: "pointer" }} />
+				}
 			>
 				{date} - {time.start} to {time.end}
 			</CardLayout>
 			<CardLayout position="Mid">
 				<Card.Title>{title}</Card.Title>
 				<Card.Subtitle className="mb-2 text-muted">
-					Location :{" "}
-					<div className="text-primary d-inline-block">{location}</div>
+					Location :&nbsp;
+					<div className="text-primary d-inline-block font-weight-bold">
+						{location}
+					</div>
 				</Card.Subtitle>
 			</CardLayout>
 			<CardLayout position="Mid" icon={<BsPeople />}>
