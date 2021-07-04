@@ -1,5 +1,5 @@
 import React from "react";
-import AddEventForm from "../components/AddEventForm";
+import AddEventForm from "../components/AddEventForm/index";
 import EventCard from "../components/EventCard";
 import Layout from "../components/Layout";
 
