@@ -1,0 +1,69 @@
+{
+	"posts": [
+		{
+			"id": 1,
+			"title": "Meeting with CEO",
+			"location": "Senanyan City Hotel",
+			"participants": [
+				{
+					"name": "Ben Tic",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				},
+				{
+					"name": "Tim Doe",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				},
+				{
+					"name": "Christoper",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				}
+			],
+			"date": "11 Sep 2019",
+			"time": {
+				"start": "15:00",
+				"end": "17:00"
+			},
+			"notes": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur perspiciatis ducimus praesentium illum eligendi?",
+			"createdBy": "Jessica Jones"
+		},
+		{
+			"id": 2,
+			"title": "Meeting with CEO",
+			"location": "Senanyan City Hotel",
+			"participants": [
+				{
+					"name": "John Doeeee",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				},
+				{
+					"name": "Bobby",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				},
+				{
+					"name": "William",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				},
+				{
+					"name": "Ben Tic",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				},
+				{
+					"name": "Tim Doe",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				},
+				{
+					"name": "Christoper",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+				}
+			],
+			"date": "11 Sep 2019",
+			"time": {
+				"start": "15:00",
+				"end": "17:00"
+			},
+			"notes": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur perspiciatis ducimus praesentium illum eligendi?",
+			"createdBy": "Jones Rex"
+		}
+	],
+	"user": { "name": "John Doe" }
+}

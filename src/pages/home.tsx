@@ -1,83 +1,37 @@
-import React from "react";
-import AddEventForm from "../components/AddEventForm/index";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import EventCard from "../components/EventCard";
 import Layout from "../components/Layout";
+import { getPosts } from "../redux/actions/posts";
+import { RootState } from "../redux/store";
 
-const home: React.FC<{}> = () => {
-	const apiData = [
-		{
-			id: 1,
-			title: "Meeting with CEO",
-			location: "Senanyan City Hotel",
-			participants: [],
-			date: "11 Sep 2019",
-			time: {
-				start: "15:00",
-				end: "17:00",
-			},
-			notes:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur perspiciatis ducimus praesentium illum eligendi?",
-			createdBy: "Jessica Jones",
-		},
-		{
-			id: 2,
-			title: "Meeting with CEO",
-			location: "Senanyan City Hotel",
-			participants: [
-				{
-					name: "John Doeeee",
-					picture: "https://randomuser.me/api/portraits/thumb/women/11.jpg",
-				},
-				{
-					name: "Bobby",
-					picture: "https://randomuser.me/api/portraits/thumb/women/11.jpg",
-				},
-				{
-					name: "William",
-					picture: "https://randomuser.me/api/portraits/thumb/women/11.jpg",
-				},
-				{
-					name: "Ben Tic",
-					picture: "https://randomuser.me/api/portraits/thumb/women/11.jpg",
-				},
-				{
-					name: "Tim Doe",
-					picture: "https://randomuser.me/api/portraits/thumb/women/11.jpg",
-				},
-				{
-					name: "Christoper",
-					picture: "https://randomuser.me/api/portraits/thumb/women/11.jpg",
-				},
-			],
-			date: "11 Sep 2019",
-			time: {
-				start: "15:00",
-				end: "17:00",
-			},
-			notes:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur perspiciatis ducimus praesentium illum eligendi?",
-			createdBy: "Jessica Jones",
-		},
-	];
+const Home: React.FC<{}> = () => {
+	const posts = useSelector((state: RootState) => state.posts);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getPosts());
+	}, []);
+
 	return (
 		<Layout>
-			<AddEventForm />
-			{/* {!apiData
+			{!posts
 				? null
-				: apiData.map((data) => (
+				: posts.map((post: any) => (
 						<EventCard
-							key={data.id}
-							title={data.title}
-							location={data.location}
-							participants={data.participants}
-							date={data.date}
-							time={data.time}
-							notes={data.notes}
-							createdBy={data.createdBy}
+							key={post.id}
+							title={post.title}
+							location={post.location}
+							participants={post.participants}
+							date={post.date}
+							time={post.time}
+							notes={post.notes}
+							createdBy={post.createdBy}
 						/>
-				  ))} */}
+				  ))}
 		</Layout>
 	);
 };
 
-export default home;
+export default Home;
