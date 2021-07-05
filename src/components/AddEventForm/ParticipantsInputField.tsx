@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Form, Image, Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import "react-bootstrap-typeahead/css/Typeahead.css";
@@ -8,18 +8,16 @@ import options from "./data";
 import { RiDivideFill } from "react-icons/ri";
 
 interface ParticipantsInputFieldProps {
-	onChange: any;
+	setParticipant: any;
 	onBlur: any;
-	value: any;
 	isValid: any;
 	isInvalid: any;
 	errorFeedback: any;
 }
 
 export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
-	onChange,
+	setParticipant,
 	onBlur,
-	value,
 	isValid,
 	isInvalid,
 	errorFeedback,
@@ -28,11 +26,15 @@ export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
 		{ name: string; picture: string }[] | any[]
 	>([]);
 
+	useEffect(() => {
+		setParticipant(multiSelections);
+	}, [multiSelections]);
+
 	return (
 		<Form.Group as={Col} md="4" className="autoComplete_wrapper">
 			<Form.Label>Participants</Form.Label>
 			<Typeahead
-				renderMenuItemChildren={(option, { text }, index) => (
+				renderMenuItemChildren={(option) => (
 					<Fragment>
 						<Row className="d-flex align-items-center">
 							<div className="pr-2">
@@ -46,15 +48,19 @@ export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
 						</Row>
 					</Fragment>
 				)}
-				id="basic-typeahead-multiple"
-				labelKey="name"
 				multiple
+				id="basic-typeahead-multiple"
+				className={isValid ? "is-valid" : isInvalid ? "is-invalid" : undefined}
+				labelKey="name"
 				onChange={setMultiSelections}
+				onBlur={onBlur}
 				options={options}
-				placeholder="Choose several states..."
+				placeholder="Choose the participant..."
 				selected={multiSelections}
+				isValid={isValid}
+				isInvalid={isInvalid}
 			/>
-			<Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+			<Form.Control.Feedback type="valid">Looks good!</Form.Control.Feedback>
 			<Form.Control.Feedback type="invalid">
 				{errorFeedback}
 			</Form.Control.Feedback>

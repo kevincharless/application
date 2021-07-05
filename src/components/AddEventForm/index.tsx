@@ -1,23 +1,29 @@
 import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
-import React, { FormEvent, HTMLAttributes, useState } from "react";
+import React, { FormEvent, HTMLAttributes, useEffect, useState } from "react";
 import { Row, Col, InputGroup, Button, Form } from "react-bootstrap";
 import InputField from "./InputField";
 import { ParticipantsInputField } from "./ParticipantsInputField";
 
 const AddEventForm: React.FC<{}> = () => {
+	const [participant, setParticipant] = useState([]);
+
+	useEffect(() => {
+		formik.values.participant = participant;
+	}, [participant]);
+
 	const formik = useFormik({
 		initialValues: {
 			title: "",
 			location: "",
-			participant: "",
+			participant: [],
 			date: "",
 			notes: "",
 		},
 		validationSchema: Yup.object({
 			title: Yup.string().required("Title is Required"),
 			location: Yup.string().required("Location is Required"),
-			participant: Yup.string().required("Participant is Required"),
+			participant: Yup.array().min(1, "Participant is Required"),
 			date: Yup.string().required("Date is Required"),
 			notes: Yup.string()
 				.min(50, "Must be at least 50 characters")
@@ -54,22 +60,10 @@ const AddEventForm: React.FC<{}> = () => {
 				isInvalid={!!formik.errors.location}
 				errorFeedback={formik.errors.location}
 			/>
-			{/* <InputField
-				label="Participant"
-				type="text"
-				placeholder="Participant"
-				name="participant"
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
-				value={formik.values.participant}
-				isValid={formik.touched.participant && !formik.errors.participant}
-				isInvalid={!!formik.errors.participant}
-				errorFeedback={formik.errors.participant}
-			/> */}
+
 			<ParticipantsInputField
-				onChange={formik.handleChange}
+				setParticipant={setParticipant}
 				onBlur={formik.handleBlur}
-				value={formik.values.participant}
 				isValid={formik.touched.participant && !formik.errors.participant}
 				isInvalid={!!formik.errors.participant}
 				errorFeedback={formik.errors.participant}
