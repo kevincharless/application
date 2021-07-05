@@ -1,0 +1,70 @@
+* {
+	font-family: "poppins";
+}
+
+#wrapper {
+	overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+	background-color: #2a58ae;
+	color: #fff;
+	min-height: 100vh;
+	margin-left: -15rem;
+	transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-image {
+	width: 6rem;
+}
+
+#sidebar-wrapper .list-group {
+	width: 15rem;
+}
+
+#sidebar-wrapper .list-group-item {
+	border: none;
+	background-color: #2a58ae;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 0.8rem;
+}
+
+#sidebar-wrapper .active {
+	background-color: #1d4c9e;
+	color: rgb(255, 255, 255);
+}
+
+#page-content-wrapper {
+	min-width: 100vw;
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+	margin-left: 0;
+}
+
+@media (min-width: 768px) {
+	#sidebar-wrapper {
+		margin-left: 0;
+	}
+
+	#page-content-wrapper {
+		min-width: 0;
+		width: 100%;
+	}
+
+	body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+		margin-left: -15rem;
+	}
+}
+
+.button {
+	background-color: #2a58ae;
+	color: rgb(255, 255, 255);
+	border: #2a58ae;
+}
+
+.button-outline {
+	background-color: transparent;
+	color: #2a58ae;
+	border: 1px #2a58ae solid;
+}

@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store";
+import "./assets/css/index.css";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
