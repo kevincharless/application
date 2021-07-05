@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import React, { FormEvent, HTMLAttributes, useState } from "react";
 import { Row, Col, InputGroup, Button, Form } from "react-bootstrap";
 import InputField from "./InputField";
+import { ParticipantsInputField } from "./ParticipantsInputField";
 
 const AddEventForm: React.FC<{}> = () => {
 	const formik = useFormik({
@@ -12,10 +13,6 @@ const AddEventForm: React.FC<{}> = () => {
 			participant: "",
 			date: "",
 			notes: "",
-
-			firstName: "",
-			lastName: "",
-			email: "",
 		},
 		validationSchema: Yup.object({
 			title: Yup.string().required("Title is Required"),
@@ -57,11 +54,19 @@ const AddEventForm: React.FC<{}> = () => {
 				isInvalid={!!formik.errors.location}
 				errorFeedback={formik.errors.location}
 			/>
-			<InputField
+			{/* <InputField
 				label="Participant"
 				type="text"
 				placeholder="Participant"
 				name="participant"
+				onChange={formik.handleChange}
+				onBlur={formik.handleBlur}
+				value={formik.values.participant}
+				isValid={formik.touched.participant && !formik.errors.participant}
+				isInvalid={!!formik.errors.participant}
+				errorFeedback={formik.errors.participant}
+			/> */}
+			<ParticipantsInputField
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.participant}

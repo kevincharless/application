@@ -8,10 +8,10 @@ const App: React.FC<{}> = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/">
+				<Route path="/" exact>
 					<Home />
 				</Route>
-				<Route path="/createPost">
+				<Route path="/create-post">
 					<CreatePost />
 				</Route>
 			</Switch>
