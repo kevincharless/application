@@ -4,7 +4,7 @@ import { IoIosLaptop } from "react-icons/io";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { IoPeopleOutline } from "react-icons/io5";
 import { RiTempColdLine } from "react-icons/ri";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const SideBar: React.FC<{}> = () => {
 	return (

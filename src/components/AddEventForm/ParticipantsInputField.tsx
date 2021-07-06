@@ -2,10 +2,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Form, Image, Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import "react-bootstrap-typeahead/css/Typeahead.css";
-import { Highlighter, Typeahead } from "react-bootstrap-typeahead";
+import { Typeahead } from "react-bootstrap-typeahead";
 
-import options from "./data";
-import { RiDivideFill } from "react-icons/ri";
+import options from "../../data";
 
 interface ParticipantsInputFieldProps {
 	setParticipant: any;
@@ -28,7 +27,7 @@ export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
 
 	useEffect(() => {
 		setParticipant(multiSelections);
-	}, [multiSelections]);
+	}, [setParticipant, multiSelections]);
 
 	return (
 		<Form.Group as={Col} md="4" className="autoComplete_wrapper">

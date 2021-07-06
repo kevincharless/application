@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { BiSearch } from "react-icons/bi";
 import { RiMenuFoldLine, RiMenuUnfoldLine } from "react-icons/ri";
 
 const NavBar: React.FC<{}> = () => {

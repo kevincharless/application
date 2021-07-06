@@ -30,13 +30,13 @@ const EventCard: React.FC<EventCardProps> = ({
 	createdBy,
 }) => {
 	return (
-		<Card className="my-4" style={{ width: "30rem" }}>
+		<Card className="my-4" style={{ width: "22rem" }}>
 			<CardLayout
 				position="Top"
 				hasRightIcon={true}
 				icon={<RiCalendarEventLine />}
 				rightIcon={
-					<VscEdit className="text-primary" style={{ cursor: "pointer" }} />
+					<VscEdit className="button-icon" style={{ cursor: "pointer" }} />
 				}
 			>
 				{date} - {time.start} to {time.end}
@@ -45,25 +45,31 @@ const EventCard: React.FC<EventCardProps> = ({
 				<Card.Title>{title}</Card.Title>
 				<Card.Subtitle className="mb-2 text-muted">
 					Location :&nbsp;
-					<div className="text-primary d-inline-block font-weight-bold">
+					<div
+						className="d-inline-block font-weight-bold"
+						style={{ color: "#2a58ae" }}
+					>
 						{location}
 					</div>
 				</Card.Subtitle>
 			</CardLayout>
-			<CardLayout position="Mid" icon={<BsPeople />}>
+			<CardLayout position="Mid" icon={<BsPeople className="mt-2" />}>
 				<Row className="ml-0">
 					{participants.length === 0 ? (
 						<div>no participant</div>
 					) : (
 						participants.map((participant, index) => (
-							<Col lg={4} key={index} className="p-1">
+							<Col xs={6} key={index} className="p-1">
 								<div className="p-1 mb-2 border rounded-pill d-flex align-items-center">
 									<Image
 										roundedCircle
-										src="https://randomuser.me/api/portraits/thumb/women/11.jpg"
-										style={{ width: "2rem" }}
+										src={participant.picture as string}
+										style={{ width: "1.6rem" }}
 									/>
-									<div className="mx-1 text-break">
+									<div
+										className="mx-2 text-break"
+										style={{ fontSize: "0.8rem" }}
+									>
 										{participant.name.split(" ")[0]}
 									</div>
 								</div>
@@ -73,7 +79,7 @@ const EventCard: React.FC<EventCardProps> = ({
 				</Row>
 			</CardLayout>
 
-			<Card.Body className="pt-1">
+			<Card.Body className="pt-1 pb-3">
 				<Container className="p-2 border rounded">
 					<b>Note: </b>
 					{notes}
@@ -81,19 +87,11 @@ const EventCard: React.FC<EventCardProps> = ({
 			</Card.Body>
 
 			<Card.Body className="pt-0">
-				<Card.Text>
-					<Row>
-						<Col>
-							Created by <b>{createdBy}</b>
-						</Col>
-						<Col className="d-flex justify-content-end">
-							<Button variant="link text-dark">Cancel</Button>
-							<Button className="ml-2 px-4" variant="primary">
-								Done
-							</Button>
-						</Col>
-					</Row>
-				</Card.Text>
+				Created by <b>{createdBy}</b>
+				<div className="pt-2 d-flex justify-content-end">
+					<Button variant="link text-dark">Cancel</Button>
+					<Button className="button ml-2 px-4">Done</Button>
+				</div>
 			</Card.Body>
 		</Card>
 	);

@@ -45,7 +45,7 @@ const InputField: React.FC<InputFieldProps> = ({
 				isInvalid={isInvalid}
 				style={{ height: textarea ? "100px" : undefined }}
 			/>
-			<Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+			<Form.Control.Feedback type="valid">Looks good!</Form.Control.Feedback>
 			<Form.Control.Feedback type="invalid">
 				{errorFeedback}
 			</Form.Control.Feedback>

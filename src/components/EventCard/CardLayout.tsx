@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row, Col, Button } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 
 interface CardLayoutProps {
 	position: "Top" | "Mid" | "Bottom";
@@ -24,11 +24,11 @@ const CardLayout: React.FC<CardLayoutProps> = ({
 			<Row>
 				<Col xs={1}>{icon}</Col>
 				{!hasRightIcon ? (
-					<Col xs={11}>{children}</Col>
+					<Col xs={10}>{children}</Col>
 				) : (
 					<>
-						<Col xs={10}>{children}</Col>
-						<Col xs={1}>{rightIcon}</Col>
+						<Col xs={9}>{children}</Col>
+						<Col>{rightIcon}</Col>
 					</>
 				)}
 			</Row>

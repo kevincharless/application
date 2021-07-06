@@ -1,4 +1,9 @@
-import { FETCH_POSTS } from "../constants";
+import {
+	CREATE_POST,
+	FETCH_LOADED,
+	FETCH_LOADING,
+	FETCH_POSTS,
+} from "../constants";
 
 interface Time {
 	start: String;
@@ -16,12 +21,38 @@ interface Posts {
 	createdBy: String;
 }
 
-const initialState = [] as Posts[];
+interface InitialState {
+	posts: Posts[];
+	isLoading: Boolean;
+}
+
+const initialState = {
+	posts: [],
+	isLoading: true,
+} as InitialState;
 
 const postsReducer = (state = initialState, action: any) => {
 	switch (action.type) {
+		case FETCH_LOADING:
+			return {
+				...state,
+				isLoading: true,
+			};
+		case FETCH_LOADED:
+			return {
+				...state,
+				isLoading: false,
+			};
 		case FETCH_POSTS:
-			return (state = action.payload);
+			return {
+				...state,
+				posts: action.payload,
+			};
+		case CREATE_POST:
+			return {
+				...state,
+				posts: [action.payload, ...state.posts],
+			};
 		default:
 			return state;
 	}

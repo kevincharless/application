@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import EventCard from "../components/EventCard";
@@ -12,13 +11,20 @@ const Home: React.FC<{}> = () => {
 
 	useEffect(() => {
 		dispatch(getPosts());
-	}, []);
+	}, [dispatch]);
+
+	if (!posts.posts && !posts.isLoading) {
+		return <Layout>there is no posts</Layout>;
+	}
 
 	return (
 		<Layout>
-			{!posts
-				? null
-				: posts.map((post: any) => (
+			{!posts.posts && posts.isLoading ? (
+				<div>loading...</div>
+			) : (
+				posts.posts
+					.sort((a: any, b: any) => b.id - a.id)
+					.map((post: any) => (
 						<EventCard
 							key={post.id}
 							title={post.title}
@@ -29,7 +35,8 @@ const Home: React.FC<{}> = () => {
 							notes={post.notes}
 							createdBy={post.createdBy}
 						/>
-				  ))}
+					))
+			)}
 		</Layout>
 	);
 };
