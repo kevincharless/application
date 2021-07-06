@@ -10,7 +10,7 @@ const Layout: React.FC<{}> = ({ children }) => {
 				<SideBar />
 				<div className="bg-light" id="page-content-wrapper">
 					<NavBar />
-					<Container fluid className="bg-light">
+					<Container fluid className="children-container p-5 bg-light">
 						{children}
 					</Container>
 				</div>

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import EventCard from "../components/EventCard";
 import Layout from "../components/Layout";
@@ -19,24 +20,32 @@ const Home: React.FC<{}> = () => {
 
 	return (
 		<Layout>
-			{!posts.posts && posts.isLoading ? (
-				<div>loading...</div>
-			) : (
-				posts.posts
-					.sort((a: any, b: any) => b.id - a.id)
-					.map((post: any) => (
-						<EventCard
-							key={post.id}
-							title={post.title}
-							location={post.location}
-							participants={post.participants}
-							date={post.date}
-							time={post.time}
-							notes={post.notes}
-							createdBy={post.createdBy}
-						/>
-					))
-			)}
+			<h4 className="m-0">Dashboard</h4>
+			<p style={{ opacity: "0.8" }}>
+				Follow the available schedule, stay productive all the time
+			</p>
+			<hr className="pb-2" />
+			<Row>
+				{!posts.posts && posts.isLoading ? (
+					<div>loading...</div>
+				) : (
+					posts.posts
+						.sort((a: any, b: any) => b.id - a.id)
+						.map((post: any) => (
+							<Col className="mb-4" key={post.id}>
+								<EventCard
+									title={post.title}
+									location={post.location}
+									participants={post.participants}
+									date={post.date}
+									time={post.time}
+									notes={post.notes}
+									createdBy={post.createdBy}
+								/>
+							</Col>
+						))
+				)}
+			</Row>
 		</Layout>
 	);
 };

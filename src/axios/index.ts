@@ -5,5 +5,7 @@ const API = axios.create({
 	baseURL: "http://localhost:3004/",
 });
 
+export const fetchUsers = () => API.get("/users");
+
 export const fetchPosts = () => API.get("/posts");
 export const createPost = (newPost: PostType) => API.post("/posts", newPost);

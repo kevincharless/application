@@ -30,7 +30,7 @@ const EventCard: React.FC<EventCardProps> = ({
 	createdBy,
 }) => {
 	return (
-		<Card className="my-4" style={{ width: "22rem" }}>
+		<Card className="mb-4 h-100" style={{ width: "22rem" }}>
 			<CardLayout
 				position="Top"
 				hasRightIcon={true}

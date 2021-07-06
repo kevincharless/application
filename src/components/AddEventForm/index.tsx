@@ -89,7 +89,6 @@ const AddEventForm: React.FC<{}> = () => {
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.title}
-				isValid={formik.touched.title && !formik.errors.title}
 				isInvalid={!!formik.errors.title}
 				errorFeedback={formik.errors.title}
 			/>
@@ -101,7 +100,6 @@ const AddEventForm: React.FC<{}> = () => {
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.location}
-				isValid={formik.touched.location && !formik.errors.location}
 				isInvalid={!!formik.errors.location}
 				errorFeedback={formik.errors.location}
 			/>
@@ -109,7 +107,6 @@ const AddEventForm: React.FC<{}> = () => {
 			<ParticipantsInputField
 				setParticipant={setParticipants}
 				onBlur={formik.handleBlur}
-				isValid={formik.touched.participants && !formik.errors.participants}
 				isInvalid={!!formik.errors.participants}
 				errorFeedback={formik.errors.participants}
 			/>
@@ -121,7 +118,6 @@ const AddEventForm: React.FC<{}> = () => {
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.date}
-				isValid={formik.touched.date && !formik.errors.date}
 				isInvalid={!!formik.errors.date}
 				errorFeedback={formik.errors.date}
 			/>
@@ -133,7 +129,6 @@ const AddEventForm: React.FC<{}> = () => {
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.time.start}
-				isValid={formik.touched.time?.start && !formik.errors.time?.start}
 				isInvalid={!!formik.errors.time?.start}
 				errorFeedback={formik.errors.time?.start}
 			/>
@@ -145,7 +140,6 @@ const AddEventForm: React.FC<{}> = () => {
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.time.end}
-				isValid={formik.touched.time?.end && !formik.errors.time?.end}
 				isInvalid={!!formik.errors.time?.end}
 				errorFeedback={formik.errors.time?.end}
 			/>
@@ -158,7 +152,6 @@ const AddEventForm: React.FC<{}> = () => {
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 				value={formik.values.notes}
-				isValid={formik.touched.notes && !formik.errors.notes}
 				isInvalid={!!formik.errors.notes}
 				errorFeedback={formik.errors.notes}
 			/>

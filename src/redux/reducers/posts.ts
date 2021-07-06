@@ -10,7 +10,7 @@ interface Time {
 	end: String;
 }
 
-interface Posts {
+interface Post {
 	id: Number;
 	title: String;
 	location: String;
@@ -22,7 +22,7 @@ interface Posts {
 }
 
 interface InitialState {
-	posts: Posts[];
+	posts: Post[];
 	isLoading: Boolean;
 }
 

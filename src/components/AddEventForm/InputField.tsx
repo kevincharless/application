@@ -11,7 +11,6 @@ interface InputFieldProps {
 	onChange: any;
 	onBlur: any;
 	value: any;
-	isValid: any;
 	isInvalid: any;
 	errorFeedback: any;
 }
@@ -25,7 +24,6 @@ const InputField: React.FC<InputFieldProps> = ({
 	onChange,
 	onBlur,
 	value,
-	isValid,
 	isInvalid,
 	errorFeedback,
 }) => {
@@ -41,11 +39,9 @@ const InputField: React.FC<InputFieldProps> = ({
 				onChange={onChange}
 				onBlur={onBlur}
 				value={value}
-				isValid={isValid}
 				isInvalid={isInvalid}
 				style={{ height: textarea ? "100px" : undefined }}
 			/>
-			<Form.Control.Feedback type="valid">Looks good!</Form.Control.Feedback>
 			<Form.Control.Feedback type="invalid">
 				{errorFeedback}
 			</Form.Control.Feedback>

@@ -7,8 +7,8 @@ import {
 	FETCH_POSTS,
 } from "../constants";
 
-export const fetchLoading = () => ({ type: FETCH_LOADING });
-export const fetchLoaded = () => ({ type: FETCH_LOADED });
+export const fetchLoading = { type: FETCH_LOADING };
+export const fetchLoaded = { type: FETCH_LOADED };
 
 export const getPosts = () => async (dispatch: any) => {
 	dispatch(fetchLoading);

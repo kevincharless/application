@@ -12,3 +12,11 @@ export interface PostType {
 	notes: String;
 	createdBy: String;
 }
+
+export interface UserType {
+	id: Number;
+	name: String;
+	picture: String;
+	jobTitle: String;
+	joinDate: String;
+}

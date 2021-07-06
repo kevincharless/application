@@ -4,12 +4,13 @@ import { Col } from "react-bootstrap";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Typeahead } from "react-bootstrap-typeahead";
 
-import options from "../../data";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsers } from "../../redux/actions/users";
+import { RootState } from "../../redux/store";
 
 interface ParticipantsInputFieldProps {
 	setParticipant: any;
 	onBlur: any;
-	isValid: any;
 	isInvalid: any;
 	errorFeedback: any;
 }
@@ -17,13 +18,18 @@ interface ParticipantsInputFieldProps {
 export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
 	setParticipant,
 	onBlur,
-	isValid,
 	isInvalid,
 	errorFeedback,
 }) => {
+	const contacts = useSelector((state: RootState) => state.users.users);
 	const [multiSelections, setMultiSelections] = useState<
 		{ name: string; picture: string }[] | any[]
 	>([]);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getUsers());
+	}, [dispatch]);
 
 	useEffect(() => {
 		setParticipant(multiSelections);
@@ -33,33 +39,31 @@ export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
 		<Form.Group as={Col} md="4" className="autoComplete_wrapper">
 			<Form.Label>Participants</Form.Label>
 			<Typeahead
-				renderMenuItemChildren={(option) => (
+				renderMenuItemChildren={(contact) => (
 					<Fragment>
 						<Row className="d-flex align-items-center">
 							<div className="pr-2">
 								<Image
-									src={option.picture}
+									src={contact.picture}
 									roundedCircle
 									style={{ width: "2rem" }}
 								/>
 							</div>
-							<div>{option.name}</div>
+							<div>{contact.name}</div>
 						</Row>
 					</Fragment>
 				)}
 				multiple
 				id="basic-typeahead-multiple"
-				className={isValid ? "is-valid" : isInvalid ? "is-invalid" : undefined}
+				className={isInvalid ? "is-invalid" : undefined}
 				labelKey="name"
 				onChange={setMultiSelections}
 				onBlur={onBlur}
-				options={options}
+				options={contacts}
 				placeholder="Choose the participant..."
 				selected={multiSelections}
-				isValid={isValid}
 				isInvalid={isInvalid}
 			/>
-			<Form.Control.Feedback type="valid">Looks good!</Form.Control.Feedback>
 			<Form.Control.Feedback type="invalid">
 				{errorFeedback}
 			</Form.Control.Feedback>
