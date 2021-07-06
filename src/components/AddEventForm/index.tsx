@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Alert, Button, Form, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
@@ -10,6 +10,8 @@ import { ParticipantsInputField } from "./ParticipantsInputField";
 
 const AddEventForm: React.FC<{}> = () => {
 	const [participants, setParticipants] = useState([]);
+	const [show, setShow] = useState(false);
+
 	const dispatch = useDispatch();
 	const history = useHistory();
 
@@ -70,8 +72,12 @@ const AddEventForm: React.FC<{}> = () => {
 		onSubmit: (values) => {
 			values.date = showdate(values.date);
 			dispatch(createPost(values));
-			history.push("/");
-			window.scrollTo(0, 0);
+			setShow(true);
+			setTimeout(() => {
+				setShow(false);
+				history.push("/");
+				window.scrollTo(0, 0);
+			}, 2000);
 		},
 	});
 
@@ -80,84 +86,97 @@ const AddEventForm: React.FC<{}> = () => {
 	}, [formik.values, participants]);
 
 	return (
-		<Form noValidate onSubmit={formik.handleSubmit}>
-			<InputField
-				label="Title"
-				type="text"
-				placeholder="Title"
-				name="title"
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
-				value={formik.values.title}
-				isInvalid={!!formik.errors.title}
-				errorFeedback={formik.errors.title}
-			/>
-			<InputField
-				label="Location"
-				type="text"
-				placeholder="Location"
-				name="location"
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
-				value={formik.values.location}
-				isInvalid={!!formik.errors.location}
-				errorFeedback={formik.errors.location}
-			/>
+		<>
+			<Form noValidate onSubmit={formik.handleSubmit}>
+				<InputField
+					label="Title"
+					type="text"
+					placeholder="Title"
+					name="title"
+					onChange={formik.handleChange}
+					onBlur={formik.handleBlur}
+					value={formik.values.title}
+					isInvalid={!!formik.errors.title}
+					errorFeedback={formik.errors.title}
+				/>
+				<InputField
+					label="Location"
+					type="text"
+					placeholder="Location"
+					name="location"
+					onChange={formik.handleChange}
+					onBlur={formik.handleBlur}
+					value={formik.values.location}
+					isInvalid={!!formik.errors.location}
+					errorFeedback={formik.errors.location}
+				/>
 
-			<ParticipantsInputField
-				setParticipant={setParticipants}
-				onBlur={formik.handleBlur}
-				isInvalid={!!formik.errors.participants}
-				errorFeedback={formik.errors.participants}
-			/>
-			<InputField
-				label="Date"
-				type="date"
-				placeholder="Date"
-				name="date"
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
-				value={formik.values.date}
-				isInvalid={!!formik.errors.date}
-				errorFeedback={formik.errors.date}
-			/>
-			<InputField
-				label="Event Start Time"
-				type="time"
-				placeholder="Event start time"
-				name="time.start"
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
-				value={formik.values.time.start}
-				isInvalid={!!formik.errors.time?.start}
-				errorFeedback={formik.errors.time?.start}
-			/>
-			<InputField
-				label="Event End Time"
-				type="time"
-				placeholder="Event end time"
-				name="time.end"
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
-				value={formik.values.time.end}
-				isInvalid={!!formik.errors.time?.end}
-				errorFeedback={formik.errors.time?.end}
-			/>
-			<InputField
-				textarea
-				label="Notes"
-				type="text"
-				placeholder="Notes"
-				name="notes"
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
-				value={formik.values.notes}
-				isInvalid={!!formik.errors.notes}
-				errorFeedback={formik.errors.notes}
-			/>
+				<ParticipantsInputField
+					setParticipant={setParticipants}
+					onBlur={formik.handleBlur}
+					isInvalid={!!formik.errors.participants}
+					errorFeedback={formik.errors.participants}
+				/>
+				<InputField
+					label="Date"
+					type="date"
+					placeholder="Date"
+					name="date"
+					onChange={formik.handleChange}
+					onBlur={formik.handleBlur}
+					value={formik.values.date}
+					isInvalid={!!formik.errors.date}
+					errorFeedback={formik.errors.date}
+				/>
+				<InputField
+					label="Event Start Time"
+					type="time"
+					placeholder="Event start time"
+					name="time.start"
+					onChange={formik.handleChange}
+					onBlur={formik.handleBlur}
+					value={formik.values.time.start}
+					isInvalid={!!formik.errors.time?.start}
+					errorFeedback={formik.errors.time?.start}
+				/>
+				<InputField
+					label="Event End Time"
+					type="time"
+					placeholder="Event end time"
+					name="time.end"
+					onChange={formik.handleChange}
+					onBlur={formik.handleBlur}
+					value={formik.values.time.end}
+					isInvalid={!!formik.errors.time?.end}
+					errorFeedback={formik.errors.time?.end}
+				/>
+				<InputField
+					textarea
+					label="Notes"
+					type="text"
+					placeholder="Notes"
+					name="notes"
+					onChange={formik.handleChange}
+					onBlur={formik.handleBlur}
+					value={formik.values.notes}
+					isInvalid={!!formik.errors.notes}
+					errorFeedback={formik.errors.notes}
+				/>
 
-			<Button type="submit">Submit form</Button>
-		</Form>
+				<Button type="submit">Submit form</Button>
+			</Form>
+			<Modal
+				className="bg-transparent"
+				show={show}
+				backdrop="static"
+				keyboard={false}
+			>
+				<Alert className="p-fixed m-0" show={show} variant="success">
+					<Alert.Heading>Event schedule</Alert.Heading>
+					<p>Your schedule has been created successfully.</p>
+				</Alert>
+			</Modal>
+		</>
 	);
 };
 
