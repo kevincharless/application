@@ -8,6 +8,7 @@ const CreatePost: React.FC<{}> = () => {
 			<h4 className="m-0">Add Event</h4>
 			<p style={{ opacity: "0.8" }}>Plan an event, create the schedule</p>
 			<hr className="pb-2" />
+
 			<AddEventForm />
 		</Layout>
 	);

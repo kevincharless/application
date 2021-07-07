@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Form, Image, Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { Form, Image, Row, Col } from "react-bootstrap";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Typeahead } from "react-bootstrap-typeahead";
 
@@ -9,6 +8,7 @@ import { getUsers } from "../../redux/actions/users";
 import { RootState } from "../../redux/store";
 
 interface ParticipantsInputFieldProps {
+	icon?: any;
 	setParticipant: any;
 	onBlur: any;
 	isInvalid: any;
@@ -16,6 +16,7 @@ interface ParticipantsInputFieldProps {
 }
 
 export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
+	icon,
 	setParticipant,
 	onBlur,
 	isInvalid,
@@ -36,11 +37,23 @@ export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
 	}, [setParticipant, multiSelections]);
 
 	return (
-		<Form.Group as={Col} md="4" className="autoComplete_wrapper">
-			<Form.Label>Participants</Form.Label>
-			<Typeahead
-				renderMenuItemChildren={(contact) => (
-					<Fragment>
+		<Form.Group as={Row} className="autoComplete_wrapper">
+			<Col className="d-flex justify-content-center p-0 pl-2 pt-2" xs={1}>
+				{icon}
+			</Col>
+			<Col className="pr-0" xs={10}>
+				<Typeahead
+					multiple
+					id="basic-typeahead-multiple"
+					className={isInvalid ? "is-invalid" : undefined}
+					labelKey="name"
+					onChange={setMultiSelections}
+					onBlur={onBlur}
+					options={contacts}
+					placeholder="Choose the participant..."
+					selected={multiSelections}
+					isInvalid={isInvalid}
+					renderMenuItemChildren={(contact) => (
 						<Row className="d-flex align-items-center">
 							<div className="pr-2">
 								<Image
@@ -51,22 +64,12 @@ export const ParticipantsInputField: React.FC<ParticipantsInputFieldProps> = ({
 							</div>
 							<div>{contact.name}</div>
 						</Row>
-					</Fragment>
-				)}
-				multiple
-				id="basic-typeahead-multiple"
-				className={isInvalid ? "is-invalid" : undefined}
-				labelKey="name"
-				onChange={setMultiSelections}
-				onBlur={onBlur}
-				options={contacts}
-				placeholder="Choose the participant..."
-				selected={multiSelections}
-				isInvalid={isInvalid}
-			/>
-			<Form.Control.Feedback type="invalid">
-				{errorFeedback}
-			</Form.Control.Feedback>
+					)}
+				/>
+				<Form.Control.Feedback type="invalid">
+					{errorFeedback}
+				</Form.Control.Feedback>
+			</Col>
 		</Form.Group>
 	);
 };

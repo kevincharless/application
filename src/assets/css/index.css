@@ -78,3 +78,45 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 .button-icon {
 	color: #2a58ae;
 }
+
+.add-title {
+	border: none;
+	border-radius: 2px;
+	border-bottom: 2px rgba(0, 0, 0, 0.2) solid;
+	padding: 0;
+}
+
+.add-title.is-invalid:focus {
+	border: none;
+	border-bottom: 2px #dc3545 solid;
+	box-shadow: none;
+
+	padding: 0;
+}
+
+#basic-typeahead-multiple {
+	border: none;
+}
+.input-items {
+	border: none;
+	border-radius: 2px;
+	padding: 0;
+}
+
+.input-items:valid {
+	background-color: #f8f9fa;
+	box-shadow: none;
+	outline: 0 none;
+}
+
+.input-items:invalid:focus {
+	background-color: #f8f9fa;
+	box-shadow: none;
+	outline: 0 none;
+}
+
+input[type="text"]:focus {
+	border-color: #2a58ae;
+	box-shadow: none;
+	outline: 0 none;
+}

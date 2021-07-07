@@ -16,7 +16,8 @@ export const SideBar: React.FC<{}> = () => {
 						className="mb-3 img-fluid sidebar-image"
 						src="https://randomuser.me/api/portraits/thumb/women/35.jpg"
 					/>
-					<p className="fs-5 fw-bold">Zara Jackson</p>
+					<p className="font-weight-bolder mb-0">Zara Jackson</p>
+					<p>Master</p>
 				</div>
 				<ListGroup className="list-group">
 					<NavLink

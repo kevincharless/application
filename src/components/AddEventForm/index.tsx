@@ -1,12 +1,19 @@
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
-import { Alert, Button, Form, Modal } from "react-bootstrap";
+import { Alert, Button, Card, Col, Form, Modal, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
 import { createPost } from "../../redux/actions/posts";
 import InputField from "./InputField";
 import { ParticipantsInputField } from "./ParticipantsInputField";
+
+import {
+	IoLocationOutline,
+	IoPeopleOutline,
+	IoTimeOutline,
+} from "react-icons/io5";
+import { VscNote } from "react-icons/vsc";
 
 const AddEventForm: React.FC<{}> = () => {
 	const [participants, setParticipants] = useState([]);
@@ -86,85 +93,104 @@ const AddEventForm: React.FC<{}> = () => {
 	}, [formik.values, participants]);
 
 	return (
-		<>
-			<Form noValidate onSubmit={formik.handleSubmit}>
-				<InputField
-					label="Title"
-					type="text"
-					placeholder="Title"
-					name="title"
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.title}
-					isInvalid={!!formik.errors.title}
-					errorFeedback={formik.errors.title}
-				/>
-				<InputField
-					label="Location"
-					type="text"
-					placeholder="Location"
-					name="location"
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.location}
-					isInvalid={!!formik.errors.location}
-					errorFeedback={formik.errors.location}
-				/>
+		<div className="d-flex justify-content-center">
+			<Card style={{ width: "22rem" }}>
+				<Card.Body>
+					<Form noValidate onSubmit={formik.handleSubmit}>
+						<InputField
+							type="text"
+							placeholder="Add title"
+							name="title"
+							styleClassName="add-title pl-1"
+							onChange={formik.handleChange}
+							onBlur={formik.handleBlur}
+							value={formik.values.title}
+							isInvalid={!!formik.errors.title}
+							errorFeedback={formik.errors.title}
+						/>
+						<InputField
+							type="text"
+							placeholder="Location"
+							name="location"
+							icon={<IoLocationOutline />}
+							styleClassName="input-items pl-1"
+							onChange={formik.handleChange}
+							onBlur={formik.handleBlur}
+							value={formik.values.location}
+							isInvalid={!!formik.errors.location}
+							errorFeedback={formik.errors.location}
+						/>
 
-				<ParticipantsInputField
-					setParticipant={setParticipants}
-					onBlur={formik.handleBlur}
-					isInvalid={!!formik.errors.participants}
-					errorFeedback={formik.errors.participants}
-				/>
-				<InputField
-					label="Date"
-					type="date"
-					placeholder="Date"
-					name="date"
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.date}
-					isInvalid={!!formik.errors.date}
-					errorFeedback={formik.errors.date}
-				/>
-				<InputField
-					label="Event Start Time"
-					type="time"
-					placeholder="Event start time"
-					name="time.start"
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.time.start}
-					isInvalid={!!formik.errors.time?.start}
-					errorFeedback={formik.errors.time?.start}
-				/>
-				<InputField
-					label="Event End Time"
-					type="time"
-					placeholder="Event end time"
-					name="time.end"
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.time.end}
-					isInvalid={!!formik.errors.time?.end}
-					errorFeedback={formik.errors.time?.end}
-				/>
-				<InputField
-					textarea
-					label="Notes"
-					type="text"
-					placeholder="Notes"
-					name="notes"
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.notes}
-					isInvalid={!!formik.errors.notes}
-					errorFeedback={formik.errors.notes}
-				/>
+						<ParticipantsInputField
+							icon={<IoPeopleOutline />}
+							setParticipant={setParticipants}
+							onBlur={formik.handleBlur}
+							isInvalid={!!formik.errors.participants}
+							errorFeedback={formik.errors.participants}
+						/>
+						<InputField
+							type="date"
+							placeholder="Date"
+							name="date"
+							icon={<IoTimeOutline />}
+							styleClassName="input-items pl-1"
+							onChange={formik.handleChange}
+							onBlur={formik.handleBlur}
+							value={formik.values.date}
+							isInvalid={!!formik.errors.date}
+							errorFeedback={formik.errors.date}
+						/>
+						<Row className="pl-3">
+							<Col xs={6}>
+								<InputField
+									type="time"
+									placeholder="Event start time"
+									name="time.start"
+									label="Start Time"
+									styleClassName="input-items pl-1"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.time.start}
+									isInvalid={!!formik.errors.time?.start}
+									errorFeedback={formik.errors.time?.start}
+								/>
+							</Col>
+							<Col xs={6}>
+								<InputField
+									type="time"
+									placeholder="Event end time"
+									name="time.end"
+									label="End Time"
+									styleClassName="input-items pl-1"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.time.end}
+									isInvalid={!!formik.errors.time?.end}
+									errorFeedback={formik.errors.time?.end}
+								/>
+							</Col>
+						</Row>
+						<InputField
+							textarea
+							type="text"
+							placeholder="Notes"
+							name="notes"
+							icon={<VscNote />}
+							onChange={formik.handleChange}
+							onBlur={formik.handleBlur}
+							value={formik.values.notes}
+							isInvalid={!!formik.errors.notes}
+							errorFeedback={formik.errors.notes}
+						/>
+						<div className="d-flex justify-content-end pt-2">
+							<Button className="button" type="submit">
+								Submit form
+							</Button>
+						</div>
+					</Form>
+				</Card.Body>
+			</Card>
 
-				<Button type="submit">Submit form</Button>
-			</Form>
 			<Modal
 				className="bg-transparent"
 				show={show}
@@ -176,7 +202,7 @@ const AddEventForm: React.FC<{}> = () => {
 					<p>Your schedule has been created successfully.</p>
 				</Alert>
 			</Modal>
-		</>
+		</div>
 	);
 };
 

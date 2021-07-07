@@ -188,6 +188,34 @@
       "notes": "qdqdqdqwdqwdqdqdqdqwdqwdqdqdqdqwdqwdqdqdqdqwdqwdqdqdqdqwdqwd",
       "createdBy": "Zara Jackson",
       "id": 7
+    },
+    {
+      "title": "test baru ",
+      "location": "idk",
+      "participants": [
+        {
+          "id": 1,
+          "name": "Zara Jackson",
+          "picture": "https://randomuser.me/api/portraits/thumb/women/35.jpg",
+          "jobTitle": "Master",
+          "joinDate": "21 July 2016"
+        },
+        {
+          "id": 3,
+          "name": "Eivind Vestbø",
+          "picture": "https://randomuser.me/api/portraits/thumb/men/86.jpg",
+          "jobTitle": "Chief Officer",
+          "joinDate": "12 June 2017"
+        }
+      ],
+      "date": "07/Jul/21",
+      "time": {
+        "start": "16:55",
+        "end": "18:55"
+      },
+      "notes": "afafafasfafasfafafafasfafasfafafafasfafasfafafafasfafasfafafafasfafasf",
+      "createdBy": "Zara Jackson",
+      "id": 8
     }
   ],
   "users": [
