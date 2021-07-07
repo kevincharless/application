@@ -32,7 +32,7 @@ const Home: React.FC<{}> = () => {
 					posts.posts
 						.sort((a: any, b: any) => b.id - a.id)
 						.map((post: any) => (
-							<Col className="mb-4" key={post.id}>
+							<Col className="mb-4 d-flex justify-content-center" key={post.id}>
 								<EventCard
 									title={post.title}
 									location={post.location}
