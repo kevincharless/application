@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import { Button, Table } from "react-bootstrap";
+import { Button, Dropdown, DropdownButton, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../components/Layout";
 import { getUsers } from "../redux/actions/users";
 import { RootState } from "../redux/store";
 import { UserType } from "../utils/types";
-import { BsThreeDots } from "react-icons/bs";
+import { AiOutlineDelete } from "react-icons/ai";
+import { VscEdit } from "react-icons/vsc";
 
 const Contact: React.FC<{}> = () => {
 	const contacts = useSelector((state: RootState) => state.users);
@@ -54,10 +55,24 @@ const Contact: React.FC<{}> = () => {
 								<td className="pl-4" style={{ opacity: "0.8" }}>
 									{contact.joinDate}
 								</td>
-								<td className="pl-4 text-center" style={{ opacity: "0.8" }}>
-									<Button className="button-icon" variant="link">
-										<BsThreeDots />
-									</Button>
+								<td className="pl-4 text-center">
+									<Dropdown>
+										<Dropdown.Toggle
+											className="button"
+											id="dropdown-basic"
+										></Dropdown.Toggle>
+
+										<Dropdown.Menu className="p-0">
+											<Dropdown.Item className="py-2" eventKey="1">
+												Edit Contact &nbsp;
+												<VscEdit />
+											</Dropdown.Item>
+											<Dropdown.Item className="py-2" eventKey="2">
+												Delete Contact &nbsp;
+												<AiOutlineDelete />
+											</Dropdown.Item>
+										</Dropdown.Menu>
+									</Dropdown>
 								</td>
 							</tr>
 						))}

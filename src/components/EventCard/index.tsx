@@ -42,7 +42,9 @@ const EventCard: React.FC<EventCardProps> = ({
 				{date} - {time.start} to {time.end}
 			</CardLayout>
 			<CardLayout position="Mid">
-				<Card.Title>{title}</Card.Title>
+				<Card.Title className="font-weight-bolder" style={{ opacity: "0.8" }}>
+					{title}
+				</Card.Title>
 				<Card.Subtitle className="mb-2 text-muted">
 					Location :&nbsp;
 					<div

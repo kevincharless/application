@@ -118,7 +118,17 @@ const Temperature: React.FC<{}> = () => {
 				Hover to see a specific temperature at that time
 			</p>
 			<hr className="pb-2" />
-			<p className="font-weight-bold">Jakarta Current Temperature</p>
+			<p className="font-weight-bolder d-inline-block">
+				{!weather.temperatures[0]
+					? null
+					: weather.temperatures[0].location.name +
+					  `, ` +
+					  weather.temperatures[0].location.region +
+					  `, ` +
+					  weather.temperatures[0].location.country}
+				&nbsp;
+			</p>
+			<p className="d-inline-block">Current Temperature</p>
 			<Line
 				type="line"
 				width={800}

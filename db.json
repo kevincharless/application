@@ -1,307 +1,118 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "Meeting with CEO",
-      "location": "Senanyan City Hotel",
-      "participants": [
-        {
-          "name": "Zara Jackson",
-          "picture": "https://randomuser.me/api/portraits/thumb/women/35.jpg"
-        },
-        {
-          "name": "Lucas Christensen",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/36.jpg"
-        },
-        {
-          "name": "Eivind Vestbø",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/86.jpg"
-        }
-      ],
-      "date": "2021-07-05",
-      "time": {
-        "start": "15:00",
-        "end": "17:00"
-      },
-      "notes": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur perspiciatis ducimus praesentium illum eligendi?",
-      "createdBy": "Jessica Jones"
-    },
-    {
-      "id": 2,
-      "title": "Meeting with CEO",
-      "location": "Senanyan City Hotel",
-      "participants": [
-        {
-          "name": "Jesus Hudson",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/29.jpg"
-        },
-        {
-          "name": "Stephen Franklin",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/51.jpg"
-        },
-        {
-          "name": "Jurgen Claasen",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/87.jpg"
-        },
-        {
-          "name": "Domenica Lemoine",
-          "picture": "https://randomuser.me/api/portraits/thumb/women/65.jpg"
-        },
-        {
-          "name": "Brendan Soto",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/59.jpg"
-        },
-        {
-          "name": "Mathéo Thomas",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/63.jpg"
-        }
-      ],
-      "date": "2019-04-19",
-      "time": {
-        "start": "15:00",
-        "end": "17:00"
-      },
-      "notes": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur perspiciatis ducimus praesentium illum eligendi?",
-      "createdBy": "Jones Rex"
-    },
-    {
-      "title": "wegwe",
-      "location": "wfwef",
-      "participants": [
-        {
-          "name": "Zara Jackson",
-          "picture": "https://randomuser.me/api/portraits/thumb/women/35.jpg"
-        },
-        {
-          "name": "Eivind Vestbø",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/86.jpg"
-        }
-      ],
-      "date": "08/Jul/21",
-      "time": {
-        "start": "10:47",
-        "end": "13:45"
-      },
-      "notes": "adadadaddaadadadaddaadadadaddaadadadaddaadadadaddaadadadaddaadadadadda",
-      "createdBy": "Zara Jackson",
-      "id": 3
-    },
-    {
-      "title": "post baru",
-      "location": "batam",
-      "participants": [
-        {
-          "name": "Jesus Hudson",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/29.jpg"
-        },
-        {
-          "name": "Domenica Lemoine",
-          "picture": "https://randomuser.me/api/portraits/thumb/women/65.jpg"
-        },
-        {
-          "name": "Brendan Soto",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/59.jpg"
-        }
-      ],
-      "date": "06/Jul/21",
-      "time": {
-        "start": "10:55",
-        "end": "15:55"
-      },
-      "notes": "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
-      "createdBy": "Zara Jackson",
-      "id": 4
-    },
-    {
-      "title": "post 2",
-      "location": "pinang",
-      "participants": [
-        {
-          "name": "Jurgen Claasen",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/87.jpg"
-        },
-        {
-          "name": "Lucas Christensen",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/36.jpg"
-        },
-        {
-          "name": "Domenica Lemoine",
-          "picture": "https://randomuser.me/api/portraits/thumb/women/65.jpg"
-        },
-        {
-          "name": "Tom Garnier",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/92.jpg"
-        },
-        {
-          "name": "Eivind Vestbø",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/86.jpg"
-        },
-        {
-          "name": "Stephen Franklin",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/51.jpg"
-        }
-      ],
-      "date": "06/Jul/21",
-      "time": {
-        "start": "16:57",
-        "end": "13:57"
-      },
-      "notes": "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
-      "createdBy": "Zara Jackson",
-      "id": 5
-    },
-    {
-      "title": "afas",
-      "location": "adadasd",
-      "participants": [
-        {
-          "name": "Zara Jackson",
-          "picture": "https://randomuser.me/api/portraits/thumb/women/35.jpg"
-        }
-      ],
-      "date": "29/Jul/21",
-      "time": {
-        "start": "12:58",
-        "end": "16:58"
-      },
-      "notes": "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
-      "createdBy": "Zara Jackson",
-      "id": 6
-    },
-    {
-      "title": "wegwe",
-      "location": "asd",
-      "participants": [
-        {
-          "id": 2,
-          "name": "Lucas Christensen",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/36.jpg",
-          "jobTitle": "Chief Officer",
-          "joinDate": "01 August 2016"
-        }
-      ],
-      "date": "29/Jul/21",
-      "time": {
-        "start": "18:52",
-        "end": "16:52"
-      },
-      "notes": "qdqdqdqwdqwdqdqdqdqwdqwdqdqdqdqwdqwdqdqdqdqwdqwdqdqdqdqwdqwd",
-      "createdBy": "Zara Jackson",
-      "id": 7
-    },
-    {
-      "title": "test baru ",
-      "location": "idk",
-      "participants": [
-        {
-          "id": 1,
-          "name": "Zara Jackson",
-          "picture": "https://randomuser.me/api/portraits/thumb/women/35.jpg",
-          "jobTitle": "Master",
-          "joinDate": "21 July 2016"
-        },
-        {
-          "id": 3,
-          "name": "Eivind Vestbø",
-          "picture": "https://randomuser.me/api/portraits/thumb/men/86.jpg",
-          "jobTitle": "Chief Officer",
-          "joinDate": "12 June 2017"
-        }
-      ],
-      "date": "07/Jul/21",
-      "time": {
-        "start": "16:55",
-        "end": "18:55"
-      },
-      "notes": "afafafasfafasfafafafasfafasfafafafasfafasfafafafasfafasfafafafasfafasf",
-      "createdBy": "Zara Jackson",
-      "id": 8
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "name": "Zara Jackson",
-      "picture": "https://randomuser.me/api/portraits/thumb/women/35.jpg",
-      "jobTitle": "Master",
-      "joinDate": "21 July 2016"
-    },
-    {
-      "id": 2,
-      "name": "Lucas Christensen",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/36.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "01 August 2016"
-    },
-    {
-      "id": 3,
-      "name": "Eivind Vestbø",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/86.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "12 June 2017"
-    },
-    {
-      "id": 4,
-      "name": "Jesus Hudson",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/29.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "18 May 2018"
-    },
-    {
-      "id": 5,
-      "name": "Stephen Franklin",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/51.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "21 August 2017"
-    },
-    {
-      "id": 6,
-      "name": "Jurgen Claasen",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/87.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "05 December 2017"
-    },
-    {
-      "id": 7,
-      "name": "Domenica Lemoine",
-      "picture": "https://randomuser.me/api/portraits/thumb/women/65.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "24 February 2018"
-    },
-    {
-      "id": 8,
-      "name": "Brendan Soto",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/59.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "01 August 2016"
-    },
-    {
-      "id": 9,
-      "name": "Mathéo Thomas",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/63.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "01 August 2016"
-    },
-    {
-      "id": 10,
-      "name": "Soledad Carrasco",
-      "picture": "https://randomuser.me/api/portraits/thumb/women/43.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "01 August 2016"
-    },
-    {
-      "id": 11,
-      "name": "Tom Garnier",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/92.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "01 August 2016"
-    },
-    {
-      "id": 12,
-      "name": "Mila Pruissen",
-      "picture": "https://randomuser.me/api/portraits/thumb/women/58.jpg",
-      "jobTitle": "Chief Officer",
-      "joinDate": "01 August 2016"
-    }
-  ]
+	"posts": [
+		{
+			"title": "Meeting with CEO",
+			"location": "Senanyan City Hotel",
+			"participants": [
+				{
+					"id": 1,
+					"name": "Zara Jackson",
+					"picture": "https://randomuser.me/api/portraits/thumb/women/35.jpg",
+					"jobTitle": "Master",
+					"joinDate": "21 July 2016"
+				},
+				{
+					"id": 2,
+					"name": "Lucas Christensen",
+					"picture": "https://randomuser.me/api/portraits/thumb/men/36.jpg",
+					"jobTitle": "Chief Officer",
+					"joinDate": "01 August 2016"
+				}
+			],
+			"date": "11/Sept/19",
+			"time": {
+				"start": "15:00",
+				"end": "17:00"
+			},
+			"notes": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur perspiciatis ducimus praesentium illum eligendi?",
+			"createdBy": "Jessica Jones",
+			"id": 1
+		}
+	],
+	"users": [
+		{
+			"id": 1,
+			"name": "Zara Jackson",
+			"picture": "https://randomuser.me/api/portraits/thumb/women/35.jpg",
+			"jobTitle": "Master",
+			"joinDate": "21 July 2016"
+		},
+		{
+			"id": 2,
+			"name": "Lucas Christensen",
+			"picture": "https://randomuser.me/api/portraits/thumb/men/36.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "01 August 2016"
+		},
+		{
+			"id": 3,
+			"name": "Eivind Vestbø",
+			"picture": "https://randomuser.me/api/portraits/thumb/men/86.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "12 June 2017"
+		},
+		{
+			"id": 4,
+			"name": "Jesus Hudson",
+			"picture": "https://randomuser.me/api/portraits/thumb/men/29.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "18 May 2018"
+		},
+		{
+			"id": 5,
+			"name": "Stephen Franklin",
+			"picture": "https://randomuser.me/api/portraits/thumb/men/51.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "21 August 2017"
+		},
+		{
+			"id": 6,
+			"name": "Jurgen Claasen",
+			"picture": "https://randomuser.me/api/portraits/thumb/men/87.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "05 December 2017"
+		},
+		{
+			"id": 7,
+			"name": "Domenica Lemoine",
+			"picture": "https://randomuser.me/api/portraits/thumb/women/65.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "24 February 2018"
+		},
+		{
+			"id": 8,
+			"name": "Brendan Soto",
+			"picture": "https://randomuser.me/api/portraits/thumb/men/59.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "01 August 2016"
+		},
+		{
+			"id": 9,
+			"name": "Mathéo Thomas",
+			"picture": "https://randomuser.me/api/portraits/thumb/men/63.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "01 August 2016"
+		},
+		{
+			"id": 10,
+			"name": "Soledad Carrasco",
+			"picture": "https://randomuser.me/api/portraits/thumb/women/43.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "01 August 2016"
+		},
+		{
+			"id": 11,
+			"name": "Tom Garnier",
+			"picture": "https://randomuser.me/api/portraits/thumb/men/92.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "01 August 2016"
+		},
+		{
+			"id": 12,
+			"name": "Mila Pruissen",
+			"picture": "https://randomuser.me/api/portraits/thumb/women/58.jpg",
+			"jobTitle": "Chief Officer",
+			"joinDate": "01 August 2016"
+		}
+	]
 }
