@@ -23,6 +23,7 @@ const AddEventForm: React.FC<{}> = () => {
 	const history = useHistory();
 
 	const showdate = (eventDate: string) => {
+		// from 2019-09-11 to 11/Sept/19
 		let months = [
 			"Jan",
 			"Feb",

@@ -7,6 +7,7 @@ import { RootState } from "../redux/store";
 
 import { Chart } from "chart.js";
 import zoomPlugin from "chartjs-plugin-zoom";
+import PageHeader from "../components/PageHeader";
 
 Chart.register(zoomPlugin);
 
@@ -90,6 +91,7 @@ const Temperature: React.FC<{}> = () => {
 	useEffect(() => {
 		dispatch(getTemperatures());
 		setLabels([...labels, currentTime(new Date())]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	useEffect(() => {
@@ -99,7 +101,7 @@ const Temperature: React.FC<{}> = () => {
 		}, 10000);
 		return () => {
 			clearInterval(interval);
-		};
+		}; // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dispatch, labels]);
 
 	useEffect(() => {
@@ -113,11 +115,10 @@ const Temperature: React.FC<{}> = () => {
 
 	return (
 		<Layout>
-			<h4 className="m-0">Temperature</h4>
-			<p style={{ opacity: "0.8" }}>
-				Hover to see a specific temperature at that time
-			</p>
-			<hr className="pb-2" />
+			<PageHeader
+				title="Temperature"
+				description="Hover to see a specific temperature at that time"
+			/>
 			<p className="font-weight-bolder d-inline-block">
 				{!weather.temperatures[0]
 					? null

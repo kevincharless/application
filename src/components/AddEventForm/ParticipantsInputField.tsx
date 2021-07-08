@@ -1,6 +1,7 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { Form, Image, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import "react-bootstrap-typeahead/css/Typeahead.css";
+
+import { Form, Image, Row, Col } from "react-bootstrap";
 import { Typeahead } from "react-bootstrap-typeahead";
 
 import { useDispatch, useSelector } from "react-redux";

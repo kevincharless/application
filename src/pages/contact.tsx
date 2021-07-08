@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, Dropdown, DropdownButton, Table } from "react-bootstrap";
+import { Button, Dropdown, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../components/Layout";
 import { getUsers } from "../redux/actions/users";
@@ -7,6 +7,7 @@ import { RootState } from "../redux/store";
 import { UserType } from "../utils/types";
 import { AiOutlineDelete } from "react-icons/ai";
 import { VscEdit } from "react-icons/vsc";
+import PageHeader from "../components/PageHeader";
 
 const Contact: React.FC<{}> = () => {
 	const contacts = useSelector((state: RootState) => state.users);
@@ -18,14 +19,11 @@ const Contact: React.FC<{}> = () => {
 
 	return (
 		<Layout>
-			<h4 className="m-0">Contact</h4>
-			<div className="d-flex justify-content-between">
-				<p className="d-inline" style={{ opacity: "0.8" }}>
-					Add your colleagues contact, invite them to your event
-				</p>
-				<Button className="button">Add contact</Button>
-			</div>
-			<hr className="pb-2" />
+			<PageHeader
+				title="Contact"
+				description="Add your colleagues contact, invite them to your event"
+				button={<Button className="button">Add contact</Button>}
+			/>
 			{contacts.isLoading ? (
 				<div>loading...</div>
 			) : !contacts.isLoading && !contacts.users ? (

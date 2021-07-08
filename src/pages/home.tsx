@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import EventCard from "../components/EventCard";
 import Layout from "../components/Layout";
+import PageHeader from "../components/PageHeader";
 import { getPosts } from "../redux/actions/posts";
 import { RootState } from "../redux/store";
 
@@ -20,11 +21,10 @@ const Home: React.FC<{}> = () => {
 
 	return (
 		<Layout>
-			<h4 className="m-0">Dashboard</h4>
-			<p style={{ opacity: "0.8" }}>
-				Follow the available schedule, stay productive all the time
-			</p>
-			<hr className="pb-2" />
+			<PageHeader
+				title="Dashboard"
+				description="Follow the available schedule, stay productive all the time"
+			/>
 			<Row>
 				{!posts.posts && posts.isLoading ? (
 					<div>loading...</div>
